@@ -138,7 +138,7 @@ const Register = () => {
                     <p className="text-center text-2xl text-gray-400 font-light py-2">----or----</p>
 
                 </form>
-                <div className=" mt-2  w-[400px] space-y-3">
+                <div className=" mt-2  min-w-full md:min-w-full lg:min-w-[400px] space-y-3 ">
                     <div>
                         <button onClick={handleGoogleRegister} className="btn w-full  btn-square btn-outline border-blue-800 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
                             <FcGoogle className="text-2xl" />
