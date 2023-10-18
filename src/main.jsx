@@ -21,33 +21,37 @@ const router = createBrowserRouter([
     path: "/",
     element: <App></App>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Home></Home>,
-        loader: ()=> fetch('/data.json')
+        path: '/',
+        element: <Home></Home>,
+        loader: () => fetch('/data.json')
       },
       {
-        path:'/addProduct',
+        path: '/addProduct',
         element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
-        path:'/myCart',
-        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        path: '/myCart',
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
 
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
       },
       {
-        path:'/details',
-        element:<CardDetails></CardDetails>
-      }
+        path: '/details/:id',
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch('/image.json')
+
+      },
+
+
     ]
   },
 ]);

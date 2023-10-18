@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image1": "https://i.ibb.co/Yykrtps/samsung.jpg",
+        "image2": "https://i.ibb.co/34NYmw7/sansum.jpg",
+        "image3": "https://i.ibb.co/v326Zdz/sasung.jpg"
+    },
+    {
+        "id": 2,
+        "image1": "https://i.ibb.co/8mJLbbB/apple.jpg",
+        "image2": "https://i.ibb.co/HFyq5bv/appel.jpg",
+        "image3": "https://i.ibb.co/W6b48n6/appl.jpg"
+    },
+    {
+        "id": 3,
+        "image1": "https://i.ibb.co/2g3cqGv/sony.jpg",
+        "image2": "https://i.ibb.co/6r4nM4C/sony1.jpg",
+        "image3": "https://i.ibb.co/yp6TvD5/sony2.jpg"
+    }
+]

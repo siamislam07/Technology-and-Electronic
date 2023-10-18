@@ -64,12 +64,12 @@ const Navbar = () => {
                 </div>
 
                 <div className="avatar hidden sm:block">
-                    <div className="w-24 rounded-full ">
-                        <img src="https://i.ibb.co/Sy8nx7q/21077504-6387627.jpg" />
+                    <div className="w-24 rounded-full  ">
+                        <img className="" src="https://i.ibb.co/2ksTTdj/21077504-6387627-removebg-preview.png" />
                     </div>
                 </div>
 
-                <a className="btn btn-ghost normal-case text-xl">Technology and Electronics</a>
+                <a className="btn btn-ghost normal-case text-base md:text-xl lg:text-xl ">Technology and Electronics</a>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">

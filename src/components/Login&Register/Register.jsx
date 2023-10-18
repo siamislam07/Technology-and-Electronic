@@ -1,7 +1,7 @@
 import { AuthContext } from "../provide/AuthProvider";
 import { useContext, useState } from "react";
 import { updateProfile } from "firebase/auth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import Swal from "sweetalert2";
@@ -135,8 +135,9 @@ const Register = () => {
                         <p className="flex items-center" ><input className="mr-2" type="checkbox" id="c" />Remember Me</p>
                     </div>
                     <button className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg ">Register</button>
+                    <p className="text-gray-400">Already Have an Account <Link to='/login'><span className="underline text-slate-300">Login</span></Link></p>
                     <p className="text-center text-2xl text-gray-400 font-light py-2">----or----</p>
-
+                    
                 </form>
                 <div className=" mt-2  min-w-full md:min-w-full lg:min-w-[400px] space-y-3 ">
                     <div>
