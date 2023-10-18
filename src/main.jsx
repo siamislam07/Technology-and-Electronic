@@ -12,6 +12,9 @@ import MyCart from './components/MyCart/MyCart.jsx';
 import Login from './components/Login&Register/Login.jsx';
 import AuthProvider from './components/provide/AuthProvider.jsx';
 import Register from './components/Login&Register/Register.jsx';
+import Home from './components/Home/Home.jsx';
+import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
+import CardDetails from './components/Home/CardDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +23,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
+        path:'/',
+        element:<Home></Home>,
+        loader: ()=> fetch('/data.json')
+      },
+      {
         path:'/addProduct',
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:'/myCart',
-        element:<MyCart></MyCart>,
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
 
       },
       {
@@ -35,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/details',
+        element:<CardDetails></CardDetails>
       }
     ]
   },
