@@ -50,12 +50,12 @@ const Home = () => {
             <div className=" max-w-[1300px] mx-auto md:mx-auto lg:mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-2 gap-24 justify-center items-center mb-10 ">
                 {
                     company.map(company => (
-                        <Link key={company.id} to={`/details/${company.id}`}>
+                        <Link key={company.id} to={`/details/${company.brandName}`}>
                             <div className="mx-auto md:mx-auto lg:mx-auto" data-aos="fade-right">
                                 <div className="card gap-5 items-center mx-auto md:mx-auto lg:mx-auto  w-[400px] h-[200px] p-3 lg:card-side   no-underline border rounded hover:border-primary/30 hover:shadow-sm hover:shadow-primary/10 group">
                                     <img className="w-16 h-12  duration-200 group-hover:scale-110 " src={company?.company_logo} alt="Album" />
                                     <div className="space-y-0 md:space-y-0 lg:space-y-5" >
-                                        <h2  className="card-title  text-neutral-900 duration-200 group-hover:text-blue-400" >{company?.company_name}</h2>
+                                        <h2  className="card-title  text-neutral-900 duration-200 group-hover:text-blue-400" >{company?.brandName}</h2>
                                         <p>{company?.description}</p>
                                         <div className="card-actions justify-start">
                                             <button className=" border-b-2 border-dotted text-neutral-600 group-hover:text-blue-400 underline decoration-neutral-300 group-hover:decoration-primary-300">Learn More</button>

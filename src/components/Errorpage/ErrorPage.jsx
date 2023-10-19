@@ -1,4 +1,4 @@
-import gif from '../assets/404/404.gif'
+import gif from '../../assets/404/404.gif'
 import { Link } from "react-router-dom";
 const ErrorPage = () => {
     return (

@@ -1,8 +1,13 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProduct = () => {
+const UpdateProduct = () => {
 
-    const handleAddProduct = e => {
+    const product = useLoaderData()
+    const { name, brandName, category, type, price, description, rating, url } = product
+
+
+    const handleUpdateProduct = e => {
         e.preventDefault()
 
         const form = e.target
@@ -16,26 +21,26 @@ const AddProduct = () => {
         const rating = form.rating.value
         const url = form.url.value
 
-        const products = { name, brandName, category, type, price, description, rating, url }
-        console.log(products);
+        const UpdateProducts = { name, brandName, category, type, price, description, rating, url }
+        console.log(UpdateProducts);
 
         // send to server
-        fetch('http://localhost:5000/product', {
-            method: 'POST',
+        fetch(`http://localhost:5000/product/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(products)
+            body: JSON.stringify(UpdateProducts)
 
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
-                        title: 'Product has been added',
+                        title: 'Product has been Updated nicely',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -43,25 +48,23 @@ const AddProduct = () => {
             })
 
     }
-
-
     return (
         <div className="p-24 bg-gray-200 mt-10">
-            <h1 className="text-3xl font-extrabold">Add Your Product</h1>
-            <form onSubmit={handleAddProduct}>
+            <h1 className="text-3xl font-extrabold">Update Your Product </h1>
+            <form onSubmit={handleUpdateProduct}>
                 {/* form name and brandName row */}
                 <div className="md:flex gap-5 mb-5 ">
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="name" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="name" defaultValue={name} />
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Name</span>
                         </label>
                     </div>
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <select required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="brandName" >
+                            <select required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="brandName" defaultValue={brandName}>
                                 <option value="" disabled hidden>Select a Brand</option>
                                 <option value="Google">Google</option>
                                 <option value="Samsung">Samsung</option>
@@ -79,7 +82,7 @@ const AddProduct = () => {
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <select required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="category" >
+                            <select required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="category" defaultValue={category}>
                                 <option value="" disabled hidden>Select a Brand</option>
                                 <option value="Technology and Electronics">Technology and Electronics</option>
 
@@ -90,7 +93,7 @@ const AddProduct = () => {
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="type" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="type" defaultValue={type} />
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Type</span>
                         </label>
                     </div>
@@ -100,14 +103,14 @@ const AddProduct = () => {
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="number" name="price" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="number" name="price" defaultValue={price}/>
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Price</span>
                         </label>
                     </div>
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="description" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="description" defaultValue={description}/>
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Description</span>
                         </label>
                     </div>
@@ -117,23 +120,23 @@ const AddProduct = () => {
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="rating" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="text" name="rating" defaultValue={rating}/>
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Rating</span>
                         </label>
                     </div>
 
                     <div className="form-control md:w-1/2 ">
                         <label className="relative mt-5">
-                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="url" name="url" />
+                            <input required className="w-full px-4 py-2 text-lg outline-none border-2 border-gray-400 rounded hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit" type="url" name="url" defaultValue={url}/>
                             <span className="absolute left-0 top-2 px-1 text-lg normal-case tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-gray-200 ml-2 peer-valid:text-sm peer-valid:-translate-y-5">ImageUrl</span>
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Product" className="btn btn-block bg-gray-300 hover:bg-gray-300" />
+                <input type="submit" value="Update Product" className="btn btn-block bg-gray-300 hover:bg-gray-300" />
             </form>
 
         </div>
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;

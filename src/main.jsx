@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ErrorPage from './components/ErrorPage.jsx';
+import ErrorPage from './components/Errorpage/ErrorPage.jsx';
 import AddProduct from './components/AddProduct/AddProduct.jsx';
 import MyCart from './components/MyCart/MyCart.jsx';
 import Login from './components/Login&Register/Login.jsx';
@@ -15,6 +15,7 @@ import Register from './components/Login&Register/Register.jsx';
 import Home from './components/Home/Home.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import CardDetails from './components/Home/CardDetails.jsx';
+import UpdateProduct from './components/UpdateProduct/UpdateProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,12 +46,15 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/details/:id',
-        element: <CardDetails></CardDetails>,
-        loader: () => fetch('/image.json')
-
+        path: '/details/:brandName',
+        element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/product')
       },
-
+      {
+        path: '/updateProduct/:id',
+        element:<UpdateProduct></UpdateProduct>,
+        loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+      }
 
     ]
   },

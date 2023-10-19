@@ -2,37 +2,37 @@
     {
         "id": 1,
         "company_logo": "https://i.ibb.co/k6GDWhS/g.png",
-        "company_name": "Google",
+        "brandName": "Google",
         "description": "Google is looking for talented software engineers to join our innovative team and work on cutting-edge projects."
     },
     {
         "id": 2,
         "company_logo": "https://i.ibb.co/7Qrkzsh/Samsung-Logo-PNG-Transparent-Image.png",
-        "company_name": "Samsung",
+        "brandName": "Samsung",
         "description": "Samsung invites you to join our data analytics team and contribute to the analysis and visualization of data for strategic insights."
     },
     {
         "id": 3,
         "company_logo": "https://i.ibb.co/ZdSWMnK/sony.png",
-        "company_name": "Sony",
+        "brandName": "Sony",
         "description": "Sony is seeking a skilled marketing manager to lead our marketing initiatives and drive the brand forward."
     },
     {
         "id": 4,
         "company_logo": "https://i.ibb.co/ykF6wh5/apple.png",
-        "company_name": "Apple",
+        "brandName": "Apple",
         "description": "Join Apple's creative team and design stunning visuals for our iconic products, setting new standards in design and aesthetics."
     },
     {
         "id": 5,
         "company_logo": "https://i.ibb.co/Tqf3MwC/intel.png",
-        "company_name": "Intel",
+        "brandName": "Intel",
         "description": "Intel is hiring an accountant to manage financial records and ensure compliance with the highest industry standards."
     },
     {
         "id": 6,
         "company_logo": "https://i.ibb.co/JvyBLTH/Microsoft.png",
-        "company_name": "Microsoft",
+        "brandName": "Microsoft",
         "description": "Join Microsoft's customer support team and provide exceptional service to our clients, helping them make the most of our products and services."
     }
 ]
