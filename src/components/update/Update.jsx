@@ -1,57 +1,57 @@
-import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { useLoaderData } from "react-router-dom";
+// import Swal from "sweetalert2";
 
-const UpdateProduct = () => {
+const Update = () => {
 
-    const product = useLoaderData()
-    const { name, brandName, category, type, price, description, rating, url } = product
+    // const product = useLoaderData()
+    // const { name, brandName, category, type, price, description, rating, url } = product
 
 
-    const handleUpdateProduct = e => {
-        e.preventDefault()
+    // const handleUpdateProduct = e => {
+    //     e.preventDefault()
 
-        const form = e.target
+    //     const form = e.target
 
-        const name = form.name.value
-        const brandName = form.brandName.value
-        const category = form.category.value
-        const type = form.type.value
-        const price = form.price.value
-        const description = form.description.value
-        const rating = form.rating.value
-        const url = form.url.value
+    //     const name = form.name.value
+    //     const brandName = form.brandName.value
+    //     const category = form.category.value
+    //     const type = form.type.value
+    //     const price = form.price.value
+    //     const description = form.description.value
+    //     const rating = form.rating.value
+    //     const url = form.url.value
 
-        const UpdateProducts = { name, brandName, category, type, price, description, rating, url }
-        console.log(UpdateProducts);
+    //     const UpdateProducts = { name, brandName, category, type, price, description, rating, url }
+    //     console.log(UpdateProducts);
 
-        // send to server
-        fetch(`http://localhost:5000/product/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(UpdateProducts)
+    //     // send to server
+    //     fetch(`http://localhost:5000/product/${_id}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(UpdateProducts)
 
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Product has been Updated nicely',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.modifiedCount > 0) {
+    //                 Swal.fire({
+    //                     position: 'top-center',
+    //                     icon: 'success',
+    //                     title: 'Product has been Updated nicely',
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 })
+    //             }
+    //         })
 
-    }
+    // }
     return (
         <div className="p-24 bg-gray-200 mt-10">
             <h1 className="text-3xl font-extrabold">Update Your Product </h1>
-            <form onSubmit={handleUpdateProduct}>
+            <form >
                 {/* form name and brandName row */}
                 <div className="md:flex gap-5 mb-5 ">
 
@@ -139,4 +139,4 @@ const UpdateProduct = () => {
     );
 };
 
-export default UpdateProduct;
+export default Update;

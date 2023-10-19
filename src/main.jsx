@@ -15,7 +15,8 @@ import Register from './components/Login&Register/Register.jsx';
 import Home from './components/Home/Home.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import CardDetails from './components/Home/CardDetails.jsx';
-import UpdateProduct from './components/UpdateProduct/UpdateProduct.jsx';
+import Item from './components/item/item.jsx';
+import Update2 from './components/update/Update2.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,14 +47,19 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
+        path: '/update/:id',
+        element: <Update2/>,
+        loader: ({params}) => fetch(`http://localhost:5000/product/${params?.id}`)
+      },
+      {
         path: '/details/:brandName',
         element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/product')
       },
       {
-        path: '/updateProduct/:id',
-        element:<UpdateProduct></UpdateProduct>,
-        loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+        path:'/item/:id',
+        element: <Item></Item>,
+        loader: (object) =>fetch(object)
       }
 
     ]

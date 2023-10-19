@@ -2,7 +2,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 import Brands from "./CardDetails";
 import Footer from "../Footer/Footer";
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import 'aos/dist/aos.css';
 import { Link, useLoaderData } from "react-router-dom";
@@ -67,6 +67,7 @@ const Home = () => {
                     ))
                 }
             </div>
+            
 
             {/* FAQ section */}
 

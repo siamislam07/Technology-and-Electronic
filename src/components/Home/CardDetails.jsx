@@ -12,6 +12,7 @@ const CardDetails = () => {
   // console.log(brands);
   const { brandName } = useParams();
   const [brand, setBrand] = useState(null);
+  console.log(brand);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,6 +46,7 @@ const CardDetails = () => {
         <div data-src="https://i.ibb.co/sQrNYzq/goolge-ads.png" />
       </AutoplaySlider>
       <div className='grid grid-cols-1 my-16 md:grid-cols-2 lg:grid-cols-4 gap-5 place-content-center items-center bg-base-100  p-4'>
+
         {filteredBrands.map((brands) => (
           
           <>
@@ -55,16 +57,17 @@ const CardDetails = () => {
               <div className="card-body">
                 <h2 className="card-title">Name: {brands.name}</h2>
                 <h2 className="card-title">BrandName: {brands.brandName}</h2>
-                <p>{brands.description}</p>
-                <p>Rating: {brands.rating}</p>
-                <p>Type: {brands.type}</p>
-                <p>Prize: {brands.price}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Details</button>
-                  <Link to={`updateProduct/${brands._id}`}><button className="btn btn-warning">Update</button></Link>
+                <p className='font-medium uppercase'>{brands.description}</p>
+                <p className='font-medium uppercase'>Rating: {brands.rating}</p>
+                <p className='font-medium uppercase'>Type: {brands.type}</p>
+                <p className='font-medium uppercase'>Prize: {brands.price} $</p>
+                <div className="card-actions justify-end ">
+                  <Link to={`/item/${brands?._id}`}><button className="btn btn-primary ">Details</button></Link>
+                  <Link to={`/update/${brands?._id}`}><button className="btn btn-warning ">Update</button></Link>
                 </div>
               </div>
             </div>
+
           </>
         ))}
         
