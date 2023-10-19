@@ -3,13 +3,19 @@
         "id": 1,
         "company_logo": "https://i.ibb.co/k6GDWhS/g.png",
         "brandName": "Google",
-        "description": "Google is looking for talented software engineers to join our innovative team and work on cutting-edge projects."
+        "description": "Google is looking for talented software engineers to join our innovative team and work on cutting-edge projects.",
+        "CarouselImage1": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/coca-cola/Coke-1280x604.jpg/width1960.jpg",
+        "CarouselImage2": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/fanta/new2-banner-resize/Fanta-desktop.png/width1960.png",
+        "CarouselImage3": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/new_banner_desktop_1280x604.jpg/width1960.jpg"
     },
     {
         "id": 2,
         "company_logo": "https://i.ibb.co/7Qrkzsh/Samsung-Logo-PNG-Transparent-Image.png",
         "brandName": "Samsung",
-        "description": "Samsung invites you to join our data analytics team and contribute to the analysis and visualization of data for strategic insights."
+        "description": "Samsung invites you to join our data analytics team and contribute to the analysis and visualization of data for strategic insights.",
+        "CarouselImage1": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/coca-cola/Coke-1280x604.jpg/width1960.jpg",
+        "CarouselImage2": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/fanta/new2-banner-resize/Fanta-desktop.png/width1960.png",
+        "CarouselImage3": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/new_banner_desktop_1280x604.jpg/width1960.jpg"
     },
     {
         "id": 3,
