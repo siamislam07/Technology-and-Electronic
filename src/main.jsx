@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:() => fetch('http://localhost:5000/cart/')
+        loader:() => fetch('https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/cart/')
       },
       {
         path: '/login',
@@ -49,17 +49,17 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <PrivateRoute><Update2/></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params?.id}`)
+        loader: ({params}) => fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product/${params?.id}`)
       },
       {
         path: '/details/:brandName',
         element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product')
       },
       {
         path:'/item/:id',
         element: <PrivateRoute><Item></Item></PrivateRoute>,
-        loader: (object) =>fetch(`http://localhost:5000/product/${object.params.id}`)
+        loader: (object) =>fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product/${object.params.id}`)
       }
 
     ]

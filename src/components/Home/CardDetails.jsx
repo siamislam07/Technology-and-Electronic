@@ -41,7 +41,7 @@ const CardDetails = () => {
       play={true}
       interval={6000}
       animation="foldOutAnimation"
-      className="h-[600px] w-1 object-top ">
+      className=" w-full md:w-2/3 h-auto md:h-[400px] lg:h-[800px] lg:w-1/2 object-top ">
       <div data-src='https://i.ibb.co/VvG3vfL/google.jpg' />
       <div data-src='https://i.ibb.co/chMRyTH/gollq.jpg' />
       <div data-src='https://i.ibb.co/sQrNYzq/goolge-ads.png' />

@@ -20,7 +20,7 @@ const AddProduct = () => {
         console.log(products);
 
         // send to server
-        fetch('http://localhost:5000/product', {
+        fetch('https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

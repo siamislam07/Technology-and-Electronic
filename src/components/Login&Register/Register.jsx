@@ -22,7 +22,7 @@ const Register = () => {
         const url = form.get('url')
         const email = form.get('email')
         const password = form.get('password')
-
+        console.log('click');
         if (password.length < 6) {
             setError('Password should be at least 6 characters or longer')
             return
@@ -50,13 +50,14 @@ const Register = () => {
                 })
                     .then()
                     .catch()
-                navigate('/')
-                setSuccess(Swal.fire({
-                    icon: 'success',
-                    title: 'Great',
-                    text: 'You have Login successfully',
-
-                }))
+                    setSuccess(Swal.fire({
+                        icon: 'success',
+                        title: 'Great',
+                        text: 'You have Login successfully',
+                        
+                    }))
+                    
+                    navigate('/')
                 e.target.reset()
             })
             .catch(error => {
@@ -111,15 +112,15 @@ const Register = () => {
                     <h2 className="text-4xl dark:text-white font-bold text-center">Register</h2>
                     <div className="flex flex-col text-gray-400 py-2">
                         <label >User Name</label>
-                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="name" name="name" id="" />
+                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="name" name="name" id="" required />
                     </div>
                     <div className="flex flex-col text-gray-400 py-2">
                         <label >E-mail</label>
-                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="email" name="email" id="" />
+                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="email" name="email" id="" required />
                     </div>
                     <div className="flex flex-col text-gray-400 py-2">
                         <label>Password</label>
-                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="password" name="password" id="" />
+                        <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="password" name="password" id="" required/>
                     </div>
                     <div className="flex flex-col text-gray-400 py-2">
                         <label>PhotoUrl</label>

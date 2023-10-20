@@ -7,13 +7,11 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import 'aos/dist/aos.css';
 import { Link, useLoaderData } from "react-router-dom";
 import { BsTypeH1 } from "react-icons/bs";
-// import Faq from "./Faq";
 import question from '../../assets/question/questions-186_256.gif'
 
 const Home = () => {
 
     const company = useLoaderData()
-    // console.log(companys);
 
     const [text] = useTypewriter({
         words: ['ElectroTech Hub: Navigating Tomorrow Innovations ', 'Creating Tech Marvels for a Connected World ', 'Pioneering the Future of Electronics', 'Innovating Tech Solutions for Tomorrow'],

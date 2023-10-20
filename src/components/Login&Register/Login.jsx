@@ -39,17 +39,17 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                
+
                 setSuccess(Swal.fire({
                     icon: 'success',
                     title: 'Great',
                     text: 'You Login successfully',
-                    
+
                 }))
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-                
+
                 setError(error.message)
             })
     }
@@ -61,12 +61,12 @@ const Login = () => {
                     icon: 'success',
                     title: 'Great',
                     text: 'You Login successfully',
-                    
+
                 }))
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-                
+
                 setError(error.message)
             })
     }
@@ -89,7 +89,12 @@ const Login = () => {
                         <input className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none" type="password" name="password" id="" />
                     </div>
 
-
+                    {
+                        error && <p className="text-white text-xl border border-red-300 w-3/5 mx-auto">{error}</p>
+                    }
+                    {
+                        succes && { succes }
+                    }
                     <div className="flex justify-between text-gray-400 py-2">
                         <p className="flex items-center"><input className="mr-2" type="checkbox" id="" />Remember Me</p>
                     </div>
@@ -99,12 +104,12 @@ const Login = () => {
                 </form>
                 <div className=" mt-2  min-w-full md:min-w-full lg:min-w-[400px] space-y-3 ">
                     <div>
-                        <button onClick={handleGoogleSignIn}  className="btn w-full btn-square btn-outline border-blue-800 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
+                        <button onClick={handleGoogleSignIn} className="btn w-full btn-square btn-outline border-blue-800 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
                             <FcGoogle className="text-2xl" />
                         </button>
                     </div>
                     <div>
-                        <button onClick={handleGitSignIn}  className="btn w-full btn-square btn-outline  transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
+                        <button onClick={handleGitSignIn} className="btn w-full btn-square btn-outline  transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
                             <BsGithub className="text-2xl" />
                         </button>
                     </div>

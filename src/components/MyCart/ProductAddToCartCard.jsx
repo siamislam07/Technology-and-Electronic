@@ -19,7 +19,7 @@ const ProductAddToCartCard = ({ cart }) => {
         })
         .then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cart/${_id}`,{
+                fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/cart/${_id}`,{
                     method: 'DELETE'
                 })
                     .then(res => res.json())

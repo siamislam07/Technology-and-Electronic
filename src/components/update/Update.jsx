@@ -25,7 +25,7 @@ const Update = () => {
     //     console.log(UpdateProducts);
 
     //     // send to server
-    //     fetch(`http://localhost:5000/product/${_id}`, {
+    //     fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product/${_id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json'

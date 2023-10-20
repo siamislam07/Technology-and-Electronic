@@ -15,7 +15,7 @@ const Item = () => {
     console.log(item);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${data.id}`)
+        fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product/${data.id}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [data.id])
@@ -23,7 +23,7 @@ const Item = () => {
     const { name, brandName, category, type, price, description, rating, url } = item || {}
 
     const handleAddToCart = () => {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
