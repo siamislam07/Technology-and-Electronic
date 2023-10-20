@@ -3,8 +3,9 @@ import Swal from "sweetalert2";
 
 const ProductAddToCartCard = ({ cart }) => {
     
-    const { _id, name, brandName, category, type, price, description, rating, url } = cart || {}
+    const { _id, name,  price, description,  url } = cart || {}
 
+    
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -32,7 +33,9 @@ const ProductAddToCartCard = ({ cart }) => {
                                 'Deleted!',
                                 'Your Product has been deleted.',
                                 'success'
-                            )
+                            ).then(()=>{
+                                window.location.reload()
+                            })
                         }
                     })
                     .catch(error=>{
@@ -44,10 +47,11 @@ const ProductAddToCartCard = ({ cart }) => {
 
     return (
         <div className="card lg:card-side  shadow-xl mb-5 bg-slate-200">
-            <figure><img className="h-32 p-1 " src={url} alt="Album" /></figure>
+            <figure><img className="h-56 p-1 " src={url} alt="Album" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>{description}</p>
+                <p className="text-xl">{description}</p>
+                <p className="text-xl">Price:{price} $</p>
                 <div className="card-actions justify-center md:justify-end ld:justify-end ">
                     <button
                         onClick={() => handleDelete(_id)}

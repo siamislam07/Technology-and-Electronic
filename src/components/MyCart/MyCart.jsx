@@ -7,7 +7,7 @@ const MyCart = () => {
 
     return (
         <div>
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-5 card card-compact max-w-[1500px] mx-auto h-[500px] bg-base-100  mt-24 ">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-5 card card-compact max-w-[1500px] mx-auto  bg-base-100  mt-24 ">
                     {
                         cartdata.map(cart =><ProductAddToCartCard key={cart._id} cart={cart}></ProductAddToCartCard>)
                     }

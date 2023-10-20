@@ -11,7 +11,7 @@ const CardDetails = () => {
   // console.log(brands);
   const { brandName } = useParams();
   const [brand, setBrand] = useState(null);
-  const [brand2, setBrand2] = useState(null);
+  
   console.log(brand);
 
   useEffect(() => {
@@ -22,17 +22,17 @@ const CardDetails = () => {
         const selectedBrand = data.find(
           (brand) => brand.brandName === brandName
         );
-        const image = data.map(image => setBrand2(image))
+        
         setBrand(selectedBrand);
-        setBrand2(image);
+        
       } catch (error) {
         console.error(error);
       }
     };
 
-
     fetchData();
   }, [brandName]);
+  
   const filteredBrands = brands.filter((brand) => brand.brandName === brandName);
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -59,7 +59,7 @@ const CardDetails = () => {
 
             <div className="card card-compact max-w-md h-[500px] bg-base-100 shadow-xl mt-24">
 
-              <figure><img src={brands.url} alt="Shoes" /></figure>
+              <figure className=''><img className='' src={brands.url} alt="Shoes" /></figure>
               <div className="card-body">
                 <h2 className="card-title">Name: {brands.name}</h2>
                 <h2 className="card-title">BrandName: {brands.brandName}</h2>

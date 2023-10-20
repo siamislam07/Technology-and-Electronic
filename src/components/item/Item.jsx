@@ -6,10 +6,13 @@ const Item = () => {
 
 
     const data = useParams()
+
     const navigate = useNavigate()
 
 
     const [item, setItem] = useState({})
+    
+    console.log(item);
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${data.id}`)
@@ -25,7 +28,14 @@ const Item = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(item)
+            body: JSON.stringify({
+                name,
+                price,
+                description,
+                url
+                
+                
+            })
         })
             .then(res => res.json())
             .then(data => {
@@ -73,7 +83,8 @@ const Item = () => {
                     </div>
 
                     <div className="mt-4">
-                        <button onClick={handleAddToCart}
+                        <button 
+                        onClick={handleAddToCart}
                             className="w-full bg-indigo-600 text-white rounded-md py-2"
                         >
                             Add to Cart
