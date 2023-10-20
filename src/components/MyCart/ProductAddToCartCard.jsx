@@ -23,7 +23,7 @@ const ProductAddToCartCard = ({ cart }) => {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
-                    .then(data => {
+                    .then(data => { 
                         console.log(data);
                         if (data.error) {
                             console.log(data.error);
