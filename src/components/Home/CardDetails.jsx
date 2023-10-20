@@ -41,7 +41,7 @@ const CardDetails = () => {
       play={true}
       interval={6000}
       animation="foldOutAnimation"
-      className="h-[600px] w-full object-top ">
+      className="h-[600px] w-1 object-top ">
       <div data-src='https://i.ibb.co/VvG3vfL/google.jpg' />
       <div data-src='https://i.ibb.co/chMRyTH/gollq.jpg' />
       <div data-src='https://i.ibb.co/sQrNYzq/goolge-ads.png' />
@@ -53,13 +53,19 @@ const CardDetails = () => {
       <Carousel />
       <div className='grid grid-cols-1 my-16 md:grid-cols-2 lg:grid-cols-4 gap-5 place-content-center items-center bg-base-100  p-4'>
 
-        {filteredBrands.map((brands) => (
+        {filteredBrands.length === 0 ?(
+          <p className='text-center text-4xl'>No items added yet!!</p>
+        ):
+          
+        
+        
+        filteredBrands.map((brands) => (
 
           <div key={brands._id}>
 
             <div className="card card-compact max-w-md h-[500px] bg-base-100 shadow-xl mt-24">
 
-              <figure className=''><img className='' src={brands.url} alt="Shoes" /></figure>
+              <figure style={{alignItems:'unset'}} className=''><img className='' src={brands.url} alt="Shoes" /></figure>
               <div className="card-body">
                 <h2 className="card-title">Name: {brands.name}</h2>
                 <h2 className="card-title">BrandName: {brands.brandName}</h2>

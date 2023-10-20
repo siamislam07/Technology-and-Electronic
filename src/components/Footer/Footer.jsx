@@ -7,7 +7,7 @@ const Footer = () => {
                         <img className="" src="https://i.ibb.co/2ksTTdj/21077504-6387627-removebg-preview.png" />
                     </div>
                 </div>
-                <p className="font-bold text-2xl">
+                <p className="font-bold text-2xl text-red-500">
                     Technology <br />Providing reliable tech since 1992
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>

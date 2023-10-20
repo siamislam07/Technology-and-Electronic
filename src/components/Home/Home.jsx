@@ -55,7 +55,7 @@ const Home = () => {
                                 <div className="card gap-5 items-center mx-auto md:mx-auto lg:mx-auto  w-[400px] h-[200px] p-3 lg:card-side   no-underline border rounded hover:border-primary/30 hover:shadow-sm hover:shadow-primary/10 group">
                                     <img className="w-16 h-12  duration-200 group-hover:scale-110 " src={company?.company_logo} alt="Album" />
                                     <div className="space-y-0 md:space-y-0 lg:space-y-5" >
-                                        <h2  className="card-title  text-neutral-900 duration-200 group-hover:text-blue-400" >{company?.brandName}</h2>
+                                        <h2 className="card-title  text-neutral-900 duration-200 group-hover:text-blue-400" >{company?.brandName}</h2>
                                         <p>{company?.description}</p>
                                         <div className="card-actions justify-start">
                                             <button className=" border-b-2 border-dotted text-neutral-600 group-hover:text-blue-400 underline decoration-neutral-300 group-hover:decoration-primary-300">Learn More</button>
@@ -67,7 +67,7 @@ const Home = () => {
                     ))
                 }
             </div>
-            
+
 
             {/* FAQ section */}
 
@@ -79,7 +79,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" checked="checked" />
                                 <div className="collapse-title text-xl font-medium">
-                                What is ElectroTech Hub, and what do you offer?
+                                    What is ElectroTech Hub, and what do you offer?
                                 </div>
                                 <div className="collapse-content">
                                     <p>ElectroTech Hub is your premier destination for all things technology and electronics. We offer a wide range of resources, insights, and information about the latest advancements in the tech world, including articles, reviews, guides, and more.</p>
@@ -88,7 +88,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium">
-                                How can I stay updated on the latest tech trends?
+                                    How can I stay updated on the latest tech trends?
                                 </div>
                                 <div className="collapse-content">
                                     <p>You can stay informed about the latest tech trends by regularly visiting our website, subscribing to our newsletter, and following us on social media platforms. We curate and publish up-to-date content on emerging technologies and innovations. </p>
@@ -97,7 +97,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium">
-                                Can I submit my tech-related content to ElectroTech Hub?
+                                    Can I submit my tech-related content to ElectroTech Hub?
                                 </div>
                                 <div className="collapse-content">
                                     <p>Yes</p>
@@ -106,7 +106,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium">
-                                Are the product reviews on ElectroTech Hub unbiased?
+                                    Are the product reviews on ElectroTech Hub unbiased?
                                 </div>
                                 <div className="collapse-content">
                                     <p> Yes, we take pride in providing objective and unbiased product reviews. Our goal is to offer honest assessments and recommendations to help you make informed decisions when choosing tech products.</p>
@@ -115,7 +115,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium">
-                                Is my personal information safe when I use your website?
+                                    Is my personal information safe when I use your website?
                                 </div>
                                 <div className="collapse-content">
                                     <p>Yes, we take your privacy and data security seriously. We have robust privacy measures in place to protect your personal information. Please refer to our Privacy Policy for more details on how we handle your data.</p>
@@ -124,7 +124,7 @@ const Home = () => {
                             <div className="collapse collapse-arrow bg-base-200">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-xl font-medium">
-                                Can I advertise or partner with ElectroTech Hub?
+                                    Can I advertise or partner with ElectroTech Hub?
                                 </div>
                                 <div className="collapse-content">
                                     <p>We are open to advertising and partnership opportunities. Please reach out to us through the provided contact information to discuss potential collaborations and advertising options. </p>
@@ -135,6 +135,16 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* seo section */}
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <img data-aos="fade-left" src="https://i.ibb.co/WDLFhC7/bohemian-man-with-his-arms-crossed-removebg-preview.png" className="max-w-sm rounded-lg shadow-2xl" />
+                    <div>
+                        <h1 className="text-6xl font-bold">Company CEO</h1>
+                        <p className="py-6 text-3xl">When someone tells you it can’t be done, it’s more a reflection of their limitations, not yours!</p>
+                    </div>
+                </div>
+            </div>
             {/* <Faq></Faq> */}
             <Footer></Footer>
         </div>
