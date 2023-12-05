@@ -12,7 +12,7 @@ const CardDetails = () => {
   const { brandName } = useParams();
   const [brand, setBrand] = useState(null);
   
-  console.log(brand);
+  //console.log(brand);
 
   useEffect(() => {
     const fetchData = async () => {

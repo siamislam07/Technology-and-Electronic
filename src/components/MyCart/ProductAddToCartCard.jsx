@@ -7,7 +7,7 @@ const ProductAddToCartCard = ({ cart }) => {
 
     
     const handleDelete = _id => {
-        console.log(_id);
+        //console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -24,9 +24,9 @@ const ProductAddToCartCard = ({ cart }) => {
                 })
                     .then(res => res.json())
                     .then(data => { 
-                        console.log(data);
+                        //console.log(data);
                         if (data.error) {
-                            console.log(data.error);
+                            //console.log(data.error);
                         }
                         else if (data.deletedCount > 0) {
                             Swal.fire(
@@ -39,7 +39,7 @@ const ProductAddToCartCard = ({ cart }) => {
                         }
                     })
                     .catch(error=>{
-                        console.log(error);
+                        //console.log(error);
                     })
             }
         })

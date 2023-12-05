@@ -17,7 +17,7 @@ const AddProduct = () => {
         const url = form.url.value
 
         const products = { name, brandName, category, type, price, description, rating, url }
-        console.log(products);
+        //console.log(products);
 
         // send to server
         fetch('https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product', {
@@ -30,7 +30,7 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         position: 'top-center',

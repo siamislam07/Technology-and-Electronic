@@ -22,7 +22,7 @@ const Register = () => {
         const url = form.get('url')
         const email = form.get('email')
         const password = form.get('password')
-        console.log('click');
+        //console.log('click');
         if (password.length < 6) {
             setError('Password should be at least 6 characters or longer')
             return
@@ -80,7 +80,7 @@ const Register = () => {
                 }))
             })
             .catch(error => {
-                    console.log(error);
+                    //console.log(error);
                 setError(error.message)
             })
     }

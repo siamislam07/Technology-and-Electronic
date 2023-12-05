@@ -12,7 +12,7 @@ const Item = () => {
 
     const [item, setItem] = useState({})
     
-    console.log(item);
+    //console.logog(item);
 
     useEffect(() => {
         fetch(`https://b8a10-brandshop-server-side-siamislam07-mudx9vqxa.vercel.app/product/${data.id}`)
@@ -39,7 +39,7 @@ const Item = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 if (data.insertedId) {
                     navigate('/myCart')
                     Swal.fire({
